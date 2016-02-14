@@ -20,7 +20,11 @@ Dikarenakan tokilearning alias TLC akan dinonaktifkan, penting bagi pengguna unt
     ```
     pip install requests, beautifulsoup4
     ```
-4. Login ke tokilearning. Simpan PHPSESSID dengan klik kanan -> View Page Info -> Security -> View Cookies -> Ambil bagian Content untuk Name : PHPSESSID. Nilai berupa sebuah string acak.
+4. Login ke tokilearning. Simpan PHPSESSID dengan cara :
+    
+    a. Jika anda pengguna Firefox, pada laman tokilearning klik kanan -> View Page Info -> Security -> View Cookies -> Ambil bagian Content untuk Name : PHPSESSID. Nilai berupa sebuah string acak.
+    
+    b. Jika anda pengguna Chrome, pada laman tokilearning klik kanan -> Inspect -> tab Resource (jika tidak ada, klik icon >>) -> Resources -> Cookies -> tokilearning.org -> Ambil bagian Value untuk Name : PHPSESSID. Nilai berupa sebuah string acak.
 
 5. Download script
 
