@@ -23,7 +23,7 @@ Dikarenakan tokilearning alias TLC akan dinonaktifkan, penting bagi pengguna unt
 4. Login ke tokilearning. Simpan PHPSESSID dengan cara :
     
     a. Jika anda pengguna Firefox, pada laman tokilearning klik kanan -> View Page Info -> Security -> View Cookies -> Ambil bagian Content untuk Name : PHPSESSID. Nilai berupa sebuah string acak.
-    
+
     b. Jika anda pengguna Chrome, pada laman tokilearning klik kanan -> Inspect -> tab Resource (jika tidak ada, klik icon >>) -> Resources -> Cookies -> tokilearning.org -> Ambil bagian Value untuk Name : PHPSESSID. Nilai berupa sebuah string acak.
 
 5. Download script
@@ -37,6 +37,8 @@ Dikarenakan tokilearning alias TLC akan dinonaktifkan, penting bagi pengguna unt
     ```
     python tlc_backup.py your_PHPSESSID
     ```
+
+7. File submission akan berada di direktori script berada dengan format [ID Soal]_[Nama Soal]_[ID Submission].[pas|c|cpp]
 
 ## Lain-lain
 Terinspirasi dari [GTL](https://github.com/matematikaadit/gtl)
