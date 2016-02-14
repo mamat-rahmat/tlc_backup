@@ -18,7 +18,7 @@ Dikarenakan tokilearning alias TLC akan dinonaktifkan, penting bagi pengguna unt
 
 3. Install dependensi script
     ```
-    pip install requests, beautifulsoup4
+    pip install requests beautifulsoup4
     ```
 4. Login ke tokilearning. Simpan PHPSESSID dengan cara :
     
