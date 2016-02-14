@@ -12,7 +12,7 @@ else:
     home_response = requests.get(submission_url, cookies=cookies)
     home_html = home_response.text
     soup = BeautifulSoup(home_html, 'html.parser')
-    last = soup.find('li', class_='last').a['href'][-2:]
+    last = soup.find('li', class_='last').a['href'][34:]
 
     for i in range(1, int(last)+1):
         print('parsing page ', i);
