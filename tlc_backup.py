@@ -9,6 +9,7 @@ else:
     phpsessid = sys.argv[1]
     cookies = {'PHPSESSID' : phpsessid}
     submission_url = 'http://tokilearning.org/submission/'
+
     home_response = requests.get(submission_url, cookies=cookies)
     home_html = home_response.text
     soup = BeautifulSoup(home_html, 'html.parser')
@@ -35,12 +36,19 @@ else:
                 print('> found solution to problem', problem_id, problem_name, 'with ID', answer_id)
                 
                 response = requests.get(submission_url + answer_id + '?action=download', cookies=cookies)
-                content_disposition = response.headers['content-disposition']
-                if(content_disposition[-2:-1] == 'c'):
-                    lang = 'c'
+                if hasattr(response, 'content_disposition'):
+                    content_disposition = response.headers['content-disposition']
+                    if(content_disposition[-2:-1] == 'c'):
+                        lang = 'c'
+                    else:
+                        lang = response.headers['content-disposition'][-4:-1]
+                    content = response.text
                 else:
-                    lang = response.headers['content-disposition'][-4:-1]
-                content = response.text
+                    answer_response = requests.get(submission_url + answer_id, cookies=cookies)
+                    answer_html = answer_response.text
+                    answer_soup = BeautifulSoup(answer_html, 'html.parser')
+                    lang = answer_soup.find_all('div', class_='dtable')[1].div.contents[3].text
+                    content = answer_soup.find('pre', class_='brush: '+lang).text
 
                 if platform.platform().startswith('Windows'):
                     content = content.replace('\r\n', '\n')
