@@ -38,7 +38,7 @@ Dikarenakan tokilearning alias TLC akan dinonaktifkan, penting bagi pengguna unt
     python tlc_backup.py your_PHPSESSID
     ```
 
-7. File submission akan berada di direktori script berada dengan format [ID Soal]_[Nama Soal]_[ID Submission].[pas|c|cpp]
+7. File submission akan berada di direktori script berada dengan format `[ID Soal]_[Nama Soal]_[ID Submission].[pas|c|cpp]`
 
 ## Lain-lain
 Terinspirasi dari [GTL](https://github.com/matematikaadit/gtl)
